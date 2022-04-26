@@ -57,6 +57,7 @@ body {
     display: block;
     margin-bottom: 70px;
 }
+
 .good-link {
     position: relative;
     display: block;
@@ -179,7 +180,7 @@ body {
     height: 30px;
 
     border: none;
-    background: url('../han_images/btnCartList.png') no-repeat;
+    background: url('../images/btnCartList.png') no-repeat;
     background-position: 0px 0px;
     cursor: pointer;
 }
@@ -306,7 +307,7 @@ body {
     display: block;
     width: 36px;
     height: 32px;
-    background: url('../han_images/icoFloating.png') no-repeat;
+    background: url('../images/icoFloating.png') no-repeat;
     margin: 0 auto;
     margin-top: 5px;
 }
@@ -389,7 +390,7 @@ body {
     display: block;
     width: 190px;
     height: 31px;
-    background: url('../han_images/logo.png') no-repeat center;
+    background: url('../images/logo.png') no-repeat center;
 
     float: left;
     margin-top: 6px;
@@ -408,7 +409,7 @@ body {
     letter-spacing: -0.325px;
 
     padding-left: 21px;
-    background: url('../han_images/icoLocation.png') no-repeat;
+    background: url('../images/icoLocation.png') no-repeat;
     background-position: left center;
 
     float: left;
@@ -422,7 +423,7 @@ body {
     float: right;
 }
 
-.login > li {
+.login>li {
     position: relative;
     display: block;
     float: left;
@@ -430,15 +431,15 @@ body {
     padding: 0 11px;
 }
 
-.login > li:first-child {
+.login>li:first-child {
     padding-left: 0;
 }
 
-.login > li:last-child {
+.login>li:last-child {
     padding-right: 0;
 }
 
-.login > li::after {
+.login>li::after {
     content: '';
     position: absolute;
     right: 0;
@@ -449,11 +450,11 @@ body {
     background-color: #bbbbbb;
 }
 
-.login > li:last-child::after {
+.login>li:last-child::after {
     content: none;
 }
 
-.login > li > a {
+.login>li>a {
     position: relative;
     display: block;
     font-size: 13px;
@@ -462,9 +463,10 @@ body {
     letter-spacing: -0.325px;
 
 }
+
 .arrow-list-login {
     z-index: 1;
-    top: 20px !important;    
+    top: 20px !important;
 }
 
 .arrow-list-login a {
@@ -479,7 +481,7 @@ body {
     display: inline-block;
     width: 10px;
     height: 6px;
-    background: url('../han_images/down.png') no-repeat center;
+    background: url('../images/down.png') no-repeat center;
     margin-left: 5px;
     vertical-align: 2px;
 }
@@ -490,6 +492,7 @@ body {
     height: calc(131px - 68px);
     border-bottom: 1px solid rgba(0, 0, 0, 0.07);
 }
+
 .header-main-active {
     position: fixed;
     left: 0;
@@ -515,10 +518,12 @@ body {
     position: absolute;
     left: 0;
     top: 62px;
-    display: block;
+    display: block; 
     visibility: hidden;
-    width: 210px;
+
+    width: 210px;    
     height: 0;
+
     background-color: #fff;
     border: 1px solid #ddd;
     box-shadow: 0 3px 6px 0 rgb(0 0 0 / 16%);
@@ -532,7 +537,6 @@ body {
     width: 420px !important;
 }
 
-
 .all-menu-detail {
     position: absolute;
     left: 210px;
@@ -541,6 +545,7 @@ body {
     height: 100%;
     background-color: #f9f9f9;
 }
+
 .all-menu-detail-list {
     position: relative;
     display: none;
@@ -560,11 +565,13 @@ body {
     font-size: 15px;
     color: #000;
 }
+
 .all-menu-detail-list li a:hover{
-    font-weight: 500;
-    color: #76bd42;
+    font-weight:500;
+    color:#76bd42; 
 }
-.all-menu-detail-list li a:hover::after {
+
+.all-menu-detail-list li a:hover::after{
     content:'';
     position:absolute;
     left:0;
@@ -573,6 +580,8 @@ body {
     height:1px;
     background:#76bd42;
 }
+
+
 .all-menu-wrap {
     position: relative;
     display: block;
@@ -588,6 +597,7 @@ body {
     position: relative;
     display: block;
 }
+
 .all-list-cate li {
     position: relative;
     display: block;
@@ -598,13 +608,14 @@ body {
     background-color: #f8f8f8;
 }
 
-.all-list-cate li a  {
+.all-list-cate li a {
     position: relative;
     display: block;
     font-size: 15px;
     font-weight: 500;
     line-height: 40px;
     color: #000;
+
     letter-spacing: -0.375px;
 }
 
@@ -617,29 +628,32 @@ body {
     display: block;
     width: 6px;
     height: 10px;
-    background: url('../han_images/icoGnbArr1.png') no-repeat;
+    background: url('../images/icoGnbArr1.png') no-repeat;
     background-position: 0px 0px;
     opacity: 0;
 }
+
 .all-list-cate li a:hover {
     color: #76bd42;
 }
+
 .all-list-cate li a:hover::after {
     background-position: 0px -10px;
     opacity: 1;
 }
 
-.all-list-theme  {
+.all-list-theme {
     position: relative;
     display: block;
 }
-.all-list-theme li  {
+
+.all-list-theme li {
     position: relative;
     display: block;
     padding: 0 20px;
 }
 
-.all-list-theme li a  {
+.all-list-theme li a {
     position: relative;
     display: block;
     font-size: 15px;
@@ -653,9 +667,11 @@ body {
 .all-list-theme li:first-child a {
     border-top: 1px solid #666;
 }
+
 .all-list-theme li:last-child a {
     border-bottom: 1px solid #666;
 }
+
 .all-list-theme li a::after {
     content: '';
     position: absolute;
@@ -665,33 +681,39 @@ body {
     display: block;
     width: 6px;
     height: 10px;
-    background: url('../han_images/icoGnbArr1.png') no-repeat;
+    background: url('../images/icoGnbArr1.png') no-repeat;
     background-position: 0px 0px;
 }
+
 .all-list-theme li a:hover {
     color: #76bd42;
 }
+
 .all-list-theme li a:hover::after {
     background-position: 0px -10px;
 }
-.all-list-theme .ball::before{
-    top: 10px;
-}
-.all-list-theme li a span{
+
+.all-list-theme li a span {
     position: relative;
     display: inline-block;
-    
 }
-.all-list-service  {
+.all-list-theme .ball::before {
+    top: 10px;
+}
+
+
+.all-list-service {
     position: relative;
     display: block;
 }
-.all-list-service li  {
+
+.all-list-service li {
     position: relative;
     display: block;
     padding: 0 20px;
 }
-.all-list-service li a  {
+
+.all-list-service li a {
     position: relative;
     display: block;
     font-size: 14px;
@@ -710,12 +732,14 @@ body {
     display: block;
     width: 6px;
     height: 10px;
-    background: url('../han_images/icoGnbArr1.png') no-repeat;
+    background: url('../images/icoGnbArr1.png') no-repeat;
     background-position: 0px 0px;
 }
+
 .all-list-service li a:hover {
     color: #76bd42;
 }
+
 .all-list-service li a:hover::after {
     background-position: 0px -10px;
 }
@@ -729,6 +753,7 @@ body {
     font-weight: 500;
     color: #000;
     line-height: 28px;
+    /* 영역을 겹치기 위한 처리 */
     padding-bottom: 17px;
 }
 
@@ -750,22 +775,22 @@ body {
     display: block;
 }
 
-.gnb > li {
+.gnb>li {
     position: relative;
     display: block;
     float: left;
     padding: 0 15px;
 }
 
-.gnb > li:first-child {
+.gnb>li:first-child {
     padding-left: 0;
 }
 
-.gnb > li:last-child {
+.gnb>li:last-child {
     padding-right: 0;
 }
 
-.gnb > li > a {
+.gnb>li>a {
     position: relative;
     display: block;
     font-size: 17px;
@@ -773,7 +798,8 @@ body {
     color: #000;
     line-height: 28px;
 }
-.gnb > li > a:hover {
+
+.gnb>li>a:hover {
     color: #76bd42;
 }
 
@@ -809,6 +835,7 @@ body {
     position: relative;
     display: block;
 }
+
 .arrow-list li a {
     position: relative;
     display: inline-block;
@@ -820,20 +847,36 @@ body {
     line-height: 35px;
 }
 
+.arrow-list li a:hover {
+    font-weight: 500;
+    color: #000;    
+}
+.arrow-list li a:hover::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 8px;
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #000;
+}
+
 #arrow i {
     position: relative;
     display: inline-block;
     width: 11px;
     height: 8px;
-    background: url('../han_images/icoGnbArr2.png') no-repeat center;
+    background: url('../images/icoGnbArr2.png') no-repeat center;
     background-position: 0px 0px;
     vertical-align: 3px;
     margin-left: 3px;
 }
 
-.arrow-list-event-active{
+.arrow-list-event-active {
     color: #76bd42 !important;
 }
+
 .arrow-list-event-active i {
     background-position: 0px -8px !important;
 }
@@ -841,7 +884,7 @@ body {
 .more-div {
     position: relative;
     display: block;
-    float:left;
+    float: left;
 }
 
 #more {
@@ -857,35 +900,22 @@ body {
     margin-top: 5px;
 }
 
-#more i{
+#more i {
     position: relative;
     display: inline-block;
     width: 10px;
     height: 6px;
-    background: url('../han_images/icoGnbArr3.png') no-repeat center;
+    background: url('../images/icoGnbArr3.png') no-repeat center;
     background-position: 0px 0px;
     vertical-align: 2px;
     margin-left: 3px;
 }
-.arrow-list li a:hover{
-    font-weight: 500;
-    color: #000;
-}
-.arrow-list li a:hover::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 8px;
-    display: block;
-    width: 100%;
-    height: 1px;
-    background-color: #000;
-}
-.arrow-list-more-active{
+
+.arrow-list-more-active {
     color: #76bd42 !important;
 }
 
-.arrow-list-more-active i{
+.arrow-list-more-active i {
     background-position: 0px -7px !important;
 }
 
@@ -948,7 +978,7 @@ body {
     display: block;
     width: 30px;
     height: 30px;
-    background: url('../han_images/btnCart.png') no-repeat center;
+    background: url('../images/btnCart.png') no-repeat center;
     float: left;
     margin-left: 25px;
     margin-top: 8px;
@@ -984,7 +1014,7 @@ body {
     position: relative;
     display: block;
     height: 410px;
-    /* background: url('../han_images/visual.jpg') no-repeat center; */
+    /* background: url('../images/visual.jpg') no-repeat center; */
 }
 
 .swiper-container {
@@ -1008,15 +1038,17 @@ body {
     display: block;
     width: 64px;
     height: 64px;
-    background: url('../han_images/visualArrP.png') no-repeat;
+    background: url('../images/visualArrP.png') no-repeat;
     background-position: 0px -64px;
     z-index: 99;
     border: 0;
     cursor: pointer;
 }
+
 .sw-visual-prev:hover {
     background-position: 0px 0px;
 }
+
 .sw-visual-prev:hover::before {
     content: '';
     position: absolute;
@@ -1037,7 +1069,7 @@ body {
     display: block;
     width: 64px;
     height: 64px;
-    background: url('../han_images/visualArrN.png') no-repeat;
+    background: url('../images/visualArrN.png') no-repeat;
     background-position: 0px -64px;
     z-index: 99;
     border: 0;
@@ -1047,6 +1079,7 @@ body {
 .sw-visual-next:hover {
     background-position: 0px 0px;
 }
+
 .sw-visual-next:hover::before {
     content: '';
     position: absolute;
@@ -1073,22 +1106,23 @@ body {
     width: 30px;
     height: 30px;
     border: 0;
-    background: url('../han_images/visualPlay.png') no-repeat;
+    background: url('../images/visualPlay.png') no-repeat;
     background-position: 0px 0px;
     cursor: pointer;
     float: left;
     margin-right: 6px;
 }
-.sw-visual-pause-active{
+
+.sw-visual-pause-active {
     background-position: 0px -30px;
 }
 
-.sw-visual-pg {    
+.sw-visual-pg {
     position: relative;
     display: block;
     width: 52px;
     height: 30px;
-    background: url('../han_images/visualNum.png') no-repeat;
+    background: url('../images/visualNum.png') no-repeat;
     float: left;
     margin-right: 3px;
 
@@ -1101,16 +1135,17 @@ body {
     letter-spacing: -0.35px;
 
 }
-.sw-visual .swiper-pagination-fraction{
+
+.sw-visual .swiper-pagination-fraction {
     bottom: 0 !important;
 }
 
-.sw-visual-bt {  
+.sw-visual-bt {
     position: relative;
     display: block;
     width: 29px;
     height: 30px;
-    background: url('../han_images/visualMore.png') no-repeat;
+    background: url('../images/visualMore.png') no-repeat;
     border: 0;
     cursor: pointer;
     float: left;
@@ -1157,12 +1192,13 @@ body {
     position: absolute;
     left: 0;
     top: 360px;
-    display: block;    
+    display: block;
 }
 
-.sale-left .swiper-pagination-fraction{
+.sale-left .swiper-pagination-fraction {
     bottom: 2px !important;
 }
+
 .sale-left .swiper-pagination-fraction .swiper-pagination-current {
     color: #000;
 }
@@ -1172,12 +1208,13 @@ body {
     display: block;
     width: 26px;
     height: 20px;
-    background: url('../han_images/swiperArrP.png');
+    background: url('../images/swiperArrP.png');
     background-position: 0px 0px;
     border: 0;
     float: left;
     cursor: pointer;
 }
+
 .sw-sale-prev:hover {
     background-position: 0px -20px;
 }
@@ -1192,17 +1229,19 @@ body {
     font-size: 16px;
     color: #bbb;
 }
-.sw-sale-next {    
+
+.sw-sale-next {
     position: relative;
     display: block;
     width: 26px;
     height: 20px;
-    background: url('../han_images/swiperArrN.png');
+    background: url('../images/swiperArrN.png');
     background-position: 0px 0px;
     border: 0;
     float: left;
     cursor: pointer;
 }
+
 .sw-sale-next:hover {
     background-position: 0px -20px;
 }
@@ -1369,12 +1408,13 @@ body {
     position: absolute;
     left: 0;
     top: 190px;
-    display: block;    
+    display: block;
 }
 
-.copartner-left .swiper-pagination-fraction{
+.copartner-left .swiper-pagination-fraction {
     bottom: 2px !important;
 }
+
 .copartner-left .swiper-pagination-fraction .swiper-pagination-current {
     color: #000;
 }
@@ -1384,14 +1424,15 @@ body {
     display: block;
     width: 26px;
     height: 20px;
-    background: url('../han_images/swiperArrP.png');
+    background: url('../images/swiperArrP.png');
     background-position: 0px 0px;
     border: 0;
     float: left;
     cursor: pointer;
 }
+
 .sw-copartner-prev:hover {
-    background-position: 0px -20px; 
+    background-position: 0px -20px;
 }
 
 .sw-copartner-pg {
@@ -1404,20 +1445,23 @@ body {
     font-size: 16px;
     color: #bbb;
 }
-.sw-copartner-next {    
+
+.sw-copartner-next {
     position: relative;
     display: block;
     width: 26px;
     height: 20px;
-    background: url('../han_images/swiperArrN.png');
+    background: url('../images/swiperArrN.png');
     background-position: 0px 0px;
     border: 0;
     float: left;
     cursor: pointer;
 }
+
 .sw-copartner-next:hover {
-    background-position: 0px -20px; 
+    background-position: 0px -20px;
 }
+
 .section-b {
     display: inline-block !important;
     color: #76bd42;
@@ -1522,7 +1566,6 @@ body {
 .sw-popular {}
 
 
-
 .popular-bt {
     position: relative;
     display: block;
@@ -1578,72 +1621,72 @@ body {
 }
 
 .icon-1 {
-    background: url('../han_images/icon_1.png') no-repeat;
+    background: url('../images/icon_1.png') no-repeat;
     background-position: 0px 0px;
 }
 
 .icon-2 {
-    background: url('../han_images/icon_2.png') no-repeat;
+    background: url('../images/icon_2.png') no-repeat;
     background-position: 0px 0px;
 }
 
 .icon-3 {
-    background: url('../han_images/icon_3.png') no-repeat;
+    background: url('../images/icon_3.png') no-repeat;
     background-position: 0px 0px;
 }
 
 .icon-4 {
-    background: url('../han_images/icon_4.png') no-repeat;
+    background: url('../images/icon_4.png') no-repeat;
     background-position: 0px 0px;
 }
 
 .icon-5 {
-    background: url('../han_images/icon_5.png') no-repeat;
+    background: url('../images/icon_5.png') no-repeat;
     background-position: 0px 0px;
 }
 
 .icon-6 {
-    background: url('../han_images/icon_6.png') no-repeat;
+    background: url('../images/icon_6.png') no-repeat;
     background-position: 0px 0px;
 }
 
 .icon-7 {
-    background: url('../han_images/icon_7.png') no-repeat;
+    background: url('../images/icon_7.png') no-repeat;
     background-position: 0px 0px;
 }
 
 .icon-8 {
-    background: url('../han_images/icon_8.png') no-repeat;
+    background: url('../images/icon_8.png') no-repeat;
     background-position: 0px 0px;
 }
 
 .icon-9 {
-    background: url('../han_images/icon_9.png') no-repeat;
+    background: url('../images/icon_9.png') no-repeat;
     background-position: 0px 0px;
 }
 
 .icon-10 {
-    background: url('../han_images/icon_10.png') no-repeat;
+    background: url('../images/icon_10.png') no-repeat;
     background-position: 0px 0px;
 }
 
 .icon-11 {
-    background: url('../han_images/icon_11.png') no-repeat;
+    background: url('../images/icon_11.png') no-repeat;
     background-position: 0px 0px;
 }
 
 .icon-12 {
-    background: url('../han_images/icon_12.png') no-repeat;
+    background: url('../images/icon_12.png') no-repeat;
     background-position: 0px 0px;
 }
 
 .icon-13 {
-    background: url('../han_images/icon_13.png') no-repeat;
+    background: url('../images/icon_13.png') no-repeat;
     background-position: 0px 0px;
 }
 
 .icon-14 {
-    background: url('../han_images/icon_14.png') no-repeat;
+    background: url('../images/icon_14.png') no-repeat;
     background-position: 0px 0px;
 }
 
@@ -1657,7 +1700,7 @@ body {
     width: 26px;
     height: 20px;
 
-    background: url('../han_images/arrow_left.png') no-repeat;
+    background: url('../images/arrow_left.png') no-repeat;
     background-position: 0px 0px;
 }
 
@@ -1675,7 +1718,7 @@ body {
     width: 26px;
     height: 20px;
 
-    background: url('../han_images/arrow_right.png') no-repeat;
+    background: url('../images/arrow_right.png') no-repeat;
     background-position: 0px 0px;
 }
 
@@ -1687,7 +1730,9 @@ body {
     position: relative;
     display: block;
 }
-
+.good-tag-red {
+    background-color: #e14949;
+}
 /* 브랜드관 */
 .brand {
     position: relative;
@@ -1715,12 +1760,13 @@ body {
     position: absolute;
     left: 0;
     top: 260px;
-    display: block;    
+    display: block;
 }
 
-.brand-left .swiper-pagination-fraction{
+.brand-left .swiper-pagination-fraction {
     bottom: 2px !important;
 }
+
 .brand-left .swiper-pagination-fraction .swiper-pagination-current {
     color: #000;
 }
@@ -1730,14 +1776,15 @@ body {
     display: block;
     width: 26px;
     height: 20px;
-    background: url('../han_images/swiperArrP.png');
+    background: url('../images/swiperArrP.png');
     background-position: 0px 0px;
     border: 0;
     float: left;
     cursor: pointer;
 }
+
 .sw-brand-prev:hover {
-    background-position: 0px -20px; 
+    background-position: 0px -20px;
 }
 
 .sw-brand-pg {
@@ -1750,19 +1797,21 @@ body {
     font-size: 16px;
     color: #bbb;
 }
-.sw-brand-next {    
+
+.sw-brand-next {
     position: relative;
     display: block;
     width: 26px;
     height: 20px;
-    background: url('../han_images/swiperArrN.png');
+    background: url('../images/swiperArrN.png');
     background-position: 0px 0px;
     border: 0;
     float: left;
     cursor: pointer;
 }
+
 .sw-brand-next:hover {
-    background-position: 0px -20px; 
+    background-position: 0px -20px;
 }
 
 
@@ -1886,7 +1935,7 @@ body {
     display: block;
     width: 19px;
     height: 34px;
-    background: url('../han_images/banner_arrow.png') no-repeat;
+    background: url('../images/banner_arrow.png') no-repeat;
     background-position: 0px -34px;
     z-index: 99;
 }
@@ -2030,7 +2079,7 @@ body {
     display: block;
     width: 18px;
     height: 18px;
-    background: url('../han_images/inpCheck.png') no-repeat;
+    background: url('../images/inpCheck.png') no-repeat;
     background-position: 0px -36px;
     border: 0;
     cursor: pointer;
@@ -2159,12 +2208,13 @@ body {
     position: absolute;
     left: 0;
     top: 210px;
-    display: block;    
+    display: block;
 }
 
-.review-left .swiper-pagination-fraction{
+.review-left .swiper-pagination-fraction {
     bottom: 2px !important;
 }
+
 .review-left .swiper-pagination-fraction .swiper-pagination-current {
     color: #000;
 }
@@ -2174,14 +2224,15 @@ body {
     display: block;
     width: 26px;
     height: 20px;
-    background: url('../han_images/swiperArrP.png');
+    background: url('../images/swiperArrP.png');
     background-position: 0px 0px;
     border: 0;
     float: left;
     cursor: pointer;
 }
+
 .sw-review-prev:hover {
-    background-position: 0px -20px; 
+    background-position: 0px -20px;
 }
 
 .sw-review-pg {
@@ -2194,19 +2245,21 @@ body {
     font-size: 16px;
     color: #bbb;
 }
-.sw-review-next {    
+
+.sw-review-next {
     position: relative;
     display: block;
     width: 26px;
     height: 20px;
-    background: url('../han_images/swiperArrN.png');
+    background: url('../images/swiperArrN.png');
     background-position: 0px 0px;
     border: 0;
     float: left;
     cursor: pointer;
 }
+
 .sw-review-next:hover {
-    background-position: 0px -20px; 
+    background-position: 0px -20px;
 }
 
 
@@ -2271,7 +2324,7 @@ body {
     letter-spacing: -0.425px;
 
     padding-left: 24px;
-    background: url('../han_images/icoRating.png') no-repeat;
+    background: url('../images/icoRating.png') no-repeat;
     background-position: left center;
 
     margin-top: 5px;
@@ -2554,7 +2607,7 @@ body {
     display: block;
     width: 8px;
     height: 10px;
-    background: url('../han_images/icoFaq.png') no-repeat;
+    background: url('../images/icoFaq.png') no-repeat;
     background-position: right center;
 }
 
@@ -2668,7 +2721,7 @@ body {
     display: inline-block;
     width: 12px;
     height: 12px;
-    background: url('../han_images/btnMore.png') no-repeat center;
+    background: url('../images/btnMore.png') no-repeat center;
     vertical-align: -1px;
     margin-left: 5px;
 }
@@ -2754,7 +2807,7 @@ body {
     display: block;
     width: 26px;
     height: 26px;
-    background: url('../han_images/ftSns.png') no-repeat;
+    background: url('../images/ftSns.png') no-repeat;
 }
 
 .sns-list .sns-insta {
@@ -2843,7 +2896,7 @@ body {
     display: block;
     width: 24px;
     height: 24px;
-    background: url('../han_images/btnFamilyClose.png') no-repeat center;
+    background: url('../images/btnFamilyClose.png') no-repeat center;
     border: 0;
     cursor: pointer;
 }

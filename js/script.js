@@ -1,5 +1,13 @@
 $(document).ready(function () {
 
+    // 전체 메뉴 관련
+    let all_menu_wrap = $('.all-menu-wrap');
+    all_menu_wrap.niceScroll({
+        cursoropacitymax : 0.3,
+        cursorwidth: "7px",
+        cursorborderradius: "10px",
+    });
+
     let all_menu = $('.all-menu');
     let all_list_cate_li = $('.all-list-cate > li');   
     let all_menu_detail_list = $('.all-menu-detail-list');
@@ -20,7 +28,7 @@ $(document).ready(function () {
 
         $(this).mouseleave(function(){
             clearTimeout(all_menu_timer);
-            
+
             // 타이머 생성법 setTimeout(할일, 대기시간)
             all_menu_timer = setTimeout(allMenuHide, all_menu_timer_delay);
         });
@@ -46,6 +54,7 @@ $(document).ready(function () {
         clearTimeout(all_menu_timer);
         all_menu.removeClass('all-menu-active');
     }
+
     // 전체 메뉴 보기 
     let all = $('#all');
     let all_timer;
@@ -71,7 +80,9 @@ $(document).ready(function () {
         all_menu.css('visibility', 'hidden');
     }
 
+    // 전체메뉴의 높이는 웹브라우저의 높이를 기준으로 지정
     all_menu.css('height', 'calc(100vh - 200px)');
+
 
     // 로그인 펼침목록
     let login_menu = $('#login-menu');
@@ -240,6 +251,103 @@ window.onload = function () {
         },
     });
     
+    // Popular 의 출력을 위한 데이터
+    
+    // 카테고리별 데이터
+    let data_arr = [];
+    // 타이틀 데이터
+    let data_title = [];
+
+    // HTTP Request: 서버에 자료를 요청하는 것
+    // HTTP Response: 서버에서 응답 오는 것
+    fetch('../data.json')
+    .then(res => res.json())
+    .then(result => {
+        for(let i = 0; i < result.length; i++) {
+            let data = result[i];
+            data_title[i] = data.title;
+            data_arr[i] = data.arr;
+        }  
+        // 비동기로 데이터를 가져오기 때문에 정리 가 끝나면 목록 출력
+        p_change(data_arr[0]);
+        $('.section-bt').text(`${data_title[0]} 더보기`);
+    });    
+
+    // Popular 버튼 클릭시 실행 
+    let p_tab = $('.sw-popular .swiper-slide a');
+
+    // 내용이 나올 장소
+    let p_bottom = $('.popular-bottom');
+
+    // p_tab 을 클릭을 할때 p_change 구현하기
+
+    $.each(p_tab, function(index, item){
+        $(this).click(function(event){
+            event.preventDefault();
+
+            p_tab.removeClass('popular-bt-focus');            
+            // p_tab.eq(index).addClass('popular-bt-focus');
+            $(this).addClass('popular-bt-focus');
+
+            p_change(data_arr[index]);
+
+            let temp = data_title[index];
+            $('.section-bt').text(`${temp} 더보기`);
+
+        });
+    });
+
+    
+
+
+    // 내용 갱신
+    
+    function p_change(_arr){
+        // 최종 a 태그 html 을 저장하는 용도
+        let temp = '';
+        for(let i = 0; i < _arr.length; i++) {
+            // 배열안에 있는 데이터를 1개씩 꺼내서 참조한다.
+            let data = _arr[i];
+
+            temp += 
+            `<a href="${data.link}" class="good-link">
+                <span class="good-img">
+                    <img src="images/${data.img}" alt="제품">
+                </span>
+                <div class="good-info">`;
+
+                // cate 가 있으면 
+                if(data.cate != '') {
+                    temp += `<span class="good-cate">
+                        <em class="good-cate-txt">${data.cate}</em>
+                    </span>`;
+                }                
+                
+                temp += `<span class="good-title">
+                        ${data.title}
+                    </span>
+                    <span class="good-price">
+                        <b> ${data.price}</b>원
+                    </span>
+                </div>`;
+
+            // data.type 에 따라서 모양이 달라진다.
+            if(data.type == 0) {
+            }else if(data.type == 1) {
+                temp += `<span class="good-tag">${data.tag}</span>`;
+            }else if (data.type == 2) {
+                temp += `<span class="good-tag good-tag-red">${data.tag}</span>`;
+            }
+
+            temp+=`<button class="good-cart"></button></a>`;
+
+        }
+        p_bottom.html(temp);
+        p_bottom.find('a:first-child').css('margin-left', 0);
+    }
+
+
+    
     // 브랜드 슬라이드
     new Swiper('.sw-brand', {
         slidesPerView: 3,
@@ -284,12 +392,6 @@ window.onload = function () {
         },
     });
 
-    // 전체 메뉴 관련
-    let all_menu_wrap = $('.all-menu-wrap');
-    all_menu_wrap.niceScroll({
-        cursoropacitymax : 0.3,
-        cursorwidth: "7px",
-        cursorborderradius: "10px",
-    });
+    
 
 };
