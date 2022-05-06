@@ -260,7 +260,8 @@ window.onload = function () {
 
     // HTTP Request: 서버에 자료를 요청하는 것
     // HTTP Response: 서버에서 응답 오는 것
-    fetch('https://bluej1996.github.io/hansalim/data.json')
+    // fetch('https://bluej1996.github.io/hansalim/data.json')
+    fetch('data.json')
     .then(res => res.json())
     .then(result => {
         for(let i = 0; i < result.length; i++) {
@@ -270,7 +271,7 @@ window.onload = function () {
         }  
         // 비동기로 데이터를 가져오기 때문에 정리 가 끝나면 목록 출력
         p_change(data_arr[0]);
-        $('.section-bt').text(`${data_title[0]} 더보기`);
+        $('.section-bt').text(`${data_title[0]} 물품 더보기`);
     });    
 
     // Popular 버튼 클릭시 실행 
@@ -292,7 +293,7 @@ window.onload = function () {
             p_change(data_arr[index]);
 
             let temp = data_title[index];
-            $('.section-bt').text(`${temp} 더보기`);
+            $('.section-bt').text(`${temp} 물품 더보기`);
 
         });
     });
@@ -319,10 +320,12 @@ window.onload = function () {
                 // cate 가 있으면 
                 if(data.cate != '') {
                     temp += `<span class="good-cate">
-                        <em class="good-cate-txt">${data.cate}</em>
-                    </span>`;
+                        <em class="good-cate-txt">${data.cate}</em>`;
                 }                
-                
+                if(data.cate2 != '') {
+                    temp += `<em class="good-cate-txt">${data.cate2}</em>`;
+                }        
+                temp += `</span>`;
                 temp += `<span class="good-title">
                         ${data.title}
                     </span>
@@ -392,6 +395,23 @@ window.onload = function () {
         },
     });
 
-    
+    // 공지사항 탭 메뉴
+    let notice_menu_bt = $('.notice-menu button');
+    let notice_list = $('.notice-list');
+    $.each(notice_menu_bt, function (index, item) {
+
+        $(this).click(function (event) {
+
+            event.preventDefault();
+
+            notice_list.removeClass('notice-list-focus')
+            notice_list.eq(index).addClass('notice-list-focus');
+
+            // 내용의 포커스를 제거한다.
+            notice_menu_bt.removeClass('notice-menu-focus');
+            notice_menu_bt.eq(index).addClass('notice-menu-focus');
+        });
+
+    });
 
 };
