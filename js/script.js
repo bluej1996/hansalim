@@ -271,7 +271,7 @@ window.onload = function () {
         }  
         // 비동기로 데이터를 가져오기 때문에 정리 가 끝나면 목록 출력
         p_change(data_arr[0]);
-        $('.section-bt').text(`${data_title[0]} 물품 더보기`);
+        $('.popular .section-bt').text(`${data_title[0]} 물품 더보기`);
     });    
 
     // Popular 버튼 클릭시 실행 
@@ -395,23 +395,176 @@ window.onload = function () {
         },
     });
 
+    let cook_arr = [];
+    let cook_json = 'cook.json';
+    let cook_list = $('.cook-list');
+    let cook_html = '';
+    let cook_bt;
+    let cook_bt_all = $('.cook-total .cook-bt');
+    let cook_wrap = $('.cook-wrap');
+    
+    fetch(cook_json)
+    .then(res => res.json())
+    .then(result => {
+        for(let i = 0; i < result.length; i++){
+            cook_arr[i] = result[i];
+            cook_arr[i].cook_price = parseInt(cook_arr[i].cook_price)
+            cook_arr[i].cook_check = 1;
+        }
+        for(let i = 0; i < cook_arr.length; i++){
+            let temp = cook_arr[i];
+            cook_html += `<li>
+                <button class="cook-bt"></button>
+                <a href="${temp.cook_link}" class="cook-good">
+                    <img src="images/${temp.cook_pic}" alt="${temp.cook_name}">
+                    <p class="cook-good-info">
+                        <span class="cook-good-title">${temp.cook_name}${temp.cook_info}</span>
+                        <span class="cook-good-price">
+                            <b>${temp.cook_price.toLocaleString()}</b>원
+                        </span>
+                    </p>
+                </a>
+            </li>`;
+        }
+        cook_list.html(cook_html);
+        cook_bt = cook_list.find('.cook-bt');
+        cook_wrap.niceScroll({
+            cursoropacitymax : 0.3,
+            cursorwidth: "7px",
+            cursorborderradius: "10px",
+        });
+        makeCookBt();
+        cookCalc();
+    })
+    .catch();
+    let cooK_price_total = $('#cook-price-total');
+    let bucket_i = $('.bucket i');
+    let cook_link = $('.cook-link');
+    let count = 0;
+    let cook_count = $('#cook-count')
+
+    function cookCalc(){
+        let total = 0;
+        count = 0;
+        for(let i=0; i < cook_arr.length; i++){
+            if(cook_arr[i].cook_check == 1){
+                total += cook_arr[i].cook_price;
+                count ++;
+            }
+        }
+        cooK_price_total.html(total.toLocaleString());
+        cook_count.text(count)
+    }
+    cook_link.click(function(event){
+        event.preventDefault();
+        bucket_i.text(count);
+        bucket_i.removeClass('bucket-ani');
+        setTimeout(function(){
+            bucket_i.addClass('bucket-ani');
+        },100)
+    })
+
+    function makeCookBt() {
+        $.each(cook_bt, function(index){
+            $(this).click(function(event) {
+                event.stopPropagation();
+                cook_arr[index].cook_check *= -1;
+                $(this).toggleClass('cook-bt-false')
+                cookCalc();
+                cookAllBt();
+            });
+        });
+    }
+    let cook_all_check = 1;
+    function cookAllBt(){
+        for(let i = 0; i < cook_arr.length; i++){
+            if(cook_arr[i].cook_check != 1) {
+                cook_all_check = 0;
+                break;
+            }else{
+                cook_all_check = 1;
+            }
+        }
+        if(cook_all_check == 1) {
+            cook_bt_all.removeClass('cook-bt-false');
+        }else{
+            cook_bt_all.addClass('cook-bt-false');
+        }
+    }
+    cook_bt_all.click(function(event){
+        event.stopPropagation();
+        if(cook_all_check == 1){
+            cook_all_check = 0;
+        }else{
+            cook_all_check = 1;
+        }
+        if(cook_all_check == 1){
+            for(let i = 0; i < cook_arr.length; i++){
+                cook_arr[i].cook_check = 1;
+            }
+        }else{
+            for(let i = 0; i < cook_arr.length; i++){
+                cook_arr[i].cook_check = -1;
+            }
+        }
+        $.each(cook_bt, function(index, item){
+            if(cook_all_check == 1) {
+                $(this).removeClass('cook-bt-false')
+            }else{
+                $(this).addClass('cook-bt-false')
+            }
+        });
+        if(cook_all_check == 1) {
+            cook_bt_all.removeClass('cook-bt-false');
+        }else{
+            cook_bt_all.addClass('cook-bt-false');
+        }
+        cookCalc();
+    })
+    
+
     // 공지사항 탭 메뉴
     let notice_menu_bt = $('.notice-menu button');
     let notice_list = $('.notice-list');
     $.each(notice_menu_bt, function (index, item) {
-
         $(this).click(function (event) {
-
             event.preventDefault();
 
             notice_list.removeClass('notice-list-focus')
             notice_list.eq(index).addClass('notice-list-focus');
 
-            // 내용의 포커스를 제거한다.
             notice_menu_bt.removeClass('notice-menu-focus');
             notice_menu_bt.eq(index).addClass('notice-menu-focus');
         });
 
     });
 
+    // 비주얼 모달창
+    let visual_modal_open = $(".sw-visual-bt");
+    let visual_modal_close = $(".visual-modal-close");
+    let visual_modal = $(".visual-modal");
+
+    visual_modal_open.click(function () {
+        visual_modal.fadeIn();
+        $('html').css('overflow', 'hidden');
+    });
+
+    visual_modal_close.click(function () {
+        visual_modal.fadeOut();
+        $('html').css('overflow', 'auto');
+    });
+
+    let family_site = $('.footer-site a')
+    let sitemap = $('.sitemap')
+    let family_close = $('.family-close')
+    family_site.click(function(event){
+        event.preventDefault();
+        sitemap.slideToggle(300)
+        family_site.toggleClass('footer-site-active')
+    })
+    family_close.click(function(event){
+        event.preventDefault();
+        sitemap.slideUp(300);
+        family_site.removeClass('footer-site-active')
+    })
 };

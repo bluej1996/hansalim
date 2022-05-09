@@ -51,7 +51,60 @@ body {
     width: 1200px;
     margin: 0 auto;
 }
-
+.visual-modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 99999;
+    overflow-y: scroll;
+  }
+  
+  .visual-modal-box {
+    position: absolute;
+    left: 50%;
+    top: 50px;
+    transform: translateX(-50%);
+    display: block;
+    width: 1300px;
+    height: 1200px;
+    overflow: hidden;
+    margin-bottom: 50px;
+  }
+  
+  .visual-modal-box li {
+    position: relative;
+    display: block;
+    width: 50%;
+    float: left;
+    overflow: hidden;
+  }
+  
+  .visual-modal-box a {
+    position: relative;
+    display: block;
+    width: 1050px;
+    height: 225px;
+  }
+  
+  .visual-modal-box a img {
+    position: absolute;
+    left: 30%;
+    top: 0;
+    transform: translateX(-50%);
+    height: 100%;
+  }
+  
+  .visual-modal-close {
+    position: absolute;
+    left: calc(50% + 650px);
+    top: 50px;
+    display: block;
+    cursor: pointer;
+  }
 .good-wrap {
     position: relative;
     display: block;
@@ -250,8 +303,6 @@ body {
 .section-bt:hover {
     background-color: #f8f8f8;
 }
-
-
 .no-ml {
     margin-left: 0 !important;
 }
@@ -1000,7 +1051,25 @@ body {
     font-weight: 700;
     color: #fff;
 }
+.bucket-ani{
+    animation-name: bucket-ani;
+    animation-duration: 0.5s;
+    animation-delay: 0;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+}
+@keyframes bucket-ani {
+    0% {
+        transform: scale(1.0)
+    }
+    50%{
+        transform: scale(1.2)
+    }
+    100%{
+        transform: scale(1.0)
+    }
 
+}
 /* 메인 */
 .contents {
     position: relative;
@@ -1176,26 +1245,7 @@ body {
     display: block;
     background-color: #edf9f9;
 }
-.section-bt-1 {
-    position: relative;
-    display: block;
-    width: 114px;
 
-    text-align: center;
-    font-size: 13px;
-    color: #666;
-    line-height: 32px;
-    background-color: #fff;
-    border: 1px solid #bbb;
-
-    margin-top: 25px;
-
-    transition: background-color 0.5s;
-}
-
-.section-bt-1:hover {
-    background-color: #f8f8f8;
-}
 .sale .container {
     padding: 80px 0;
     overflow: hidden;
@@ -1770,29 +1820,6 @@ body {
     float: left;
 }
 
-.brand-left .section-bt-1 {
-    color: #000;
-}
-.section-bt-2 {
-    position: relative;
-    display: block;
-    width: 114px;
-
-    text-align: center;
-    font-size: 13px;
-    color: #666;
-    line-height: 32px;
-    background-color: #fff;
-    border: 1px solid #bbb;
-
-    margin-top: 25px;
-
-    transition: background-color 0.5s;
-}
-
-.section-bt-2:hover {
-    background-color: #f8f8f8;
-}
 
 .sw-brand-control {
     position: absolute;
@@ -2107,7 +2134,6 @@ body {
     padding-bottom: 30px;
 
 }
-
 .cook-bt {
     position: absolute;
     left: 0;
@@ -2121,7 +2147,10 @@ body {
     background-position: 0px -36px;
     border: 0;
     cursor: pointer;
-
+    z-index: 9;
+}
+.cook-bt-false{
+    background-position: 0px 0px !important;
 }
 
 .cook-list {
@@ -2742,12 +2771,12 @@ body {
 .footer-site a span {
     position: relative;
     display: block;
+    padding: 0 15px
 }
 
 .footer-site a span:first-child {
     float: left;
     margin-right: 30px;
-    padding-left: 15px;
 }
 
 .footer-site a span:last-child {
@@ -2763,7 +2792,9 @@ body {
     vertical-align: -1px;
     margin-left: 5px;
 }
-
+.footer-site-active{
+    background-color: #f4f4f4;
+}
 .footer-bottom {
     position: relative;
     display: block;
@@ -2871,13 +2902,13 @@ body {
 .sitemap {
     position: absolute;
     left: 0;
-    bottom: -100px;
+    bottom: 239px;
     display: none;
     width: 100%;
 
     background-color: #f4f4f4;
+    z-index: 99;
 }
-
 .sitemap .container {
     padding: 45px 0;
 }
