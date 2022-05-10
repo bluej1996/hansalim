@@ -51,6 +51,111 @@ body {
     width: 1200px;
     margin: 0 auto;
 }
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 99999;
+}
+
+.modal-wrap {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    width: 400px;
+    height: 250px;
+    background-color: #fff;
+    border-radius: 10px; 
+    font-size: 15px;
+    text-align: center;
+    padding-top: 100px;
+}
+.modal-wrap span{
+    font-size: 12px;
+}
+.modal-wrap::before{
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    display: block;
+    width: 50px;
+    height: 50px;
+    background: url('../images/modal_img.png') no-repeat center;
+    margin-top: 30px;
+}
+.modal-close {
+    position: relative;
+    display: inline-block;
+
+    padding: 7px 30px;
+    color: #fff;
+    background-color: #000;
+    border: 0;
+    cursor: pointer;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+.modal-close-2 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 30px;
+    display: block;
+    padding: 7px 30px;
+    color: #fff;
+    background-color: #000;
+    border: 0;
+    cursor: pointer;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+.modal-review{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    width: 400px;
+    height: 250px;
+    background-color: #fff;
+    border-radius: 10px; 
+    font-size: 15px;
+    text-align: center;
+    padding-top: 30px;
+}
+.modal-review-bt {
+    position: relative;
+    display: inline-block;
+
+    padding: 7px 30px;
+    color: #fff;
+    background-color: #000;
+    border: 0;
+    cursor: pointer;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+.modal-review span{
+    position: relative;;
+    display: block;
+    font-size: 17px;
+    font-weight: 500;
+}
+.modal-review p {
+    font-size: 14px;
+    line-height: 25px;
+}
 .visual-modal {
     position: fixed;
     left: 0;
@@ -61,9 +166,9 @@ body {
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 99999;
     overflow-y: scroll;
-  }
-  
-  .visual-modal-box {
+}
+
+.visual-modal-box {
     position: absolute;
     left: 50%;
     top: 50px;
@@ -73,38 +178,38 @@ body {
     height: 1200px;
     overflow: hidden;
     margin-bottom: 50px;
-  }
-  
-  .visual-modal-box li {
+}
+
+.visual-modal-box li {
     position: relative;
     display: block;
     width: 50%;
     float: left;
     overflow: hidden;
-  }
-  
-  .visual-modal-box a {
+}
+
+.visual-modal-box a {
     position: relative;
     display: block;
     width: 1050px;
     height: 225px;
-  }
-  
-  .visual-modal-box a img {
+}
+
+.visual-modal-box a img {
     position: absolute;
     left: 30%;
     top: 0;
     transform: translateX(-50%);
     height: 100%;
-  }
-  
-  .visual-modal-close {
+}
+
+.visual-modal-close {
     position: absolute;
     left: calc(50% + 650px);
     top: 50px;
     display: block;
     cursor: pointer;
-  }
+}
 .good-wrap {
     position: relative;
     display: block;

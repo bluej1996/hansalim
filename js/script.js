@@ -1,5 +1,19 @@
 $(document).ready(function () {
+    let modal_close = $('.modal-close');
+    let modal_close_2 = $('.modal-close-2');
+    let modal = $('.modal');
+    let modal_review = $('.modal-review');
+    let modal_review_bt = $('.modal-review-bt');
 
+    modal_close.click(function(){
+        modal.hide();
+    });
+    modal_close_2.click(function(){
+        modal.hide();
+    });
+    modal_review_bt.click(function(){
+        modal_review.show();
+    });
     // 전체 메뉴 관련
     let all_menu_wrap = $('.all-menu-wrap');
     all_menu_wrap.niceScroll({
